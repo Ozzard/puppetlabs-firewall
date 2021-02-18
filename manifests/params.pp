@@ -46,7 +46,7 @@ class firewall::params {
     'Debian': {
       $service_name_v6 = undef
       case $::operatingsystem {
-        'Debian': {
+        'Debian', 'Raspbian': {
           if versioncmp($::operatingsystemrelease, 'unstable') >= 0 {
             $service_name = 'netfilter-persistent'
             $package_name = 'netfilter-persistent'
