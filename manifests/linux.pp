@@ -69,7 +69,7 @@ class firewall::linux (
         require         => Package['iptables'],
       }
     }
-    'Debian', 'Ubuntu': {
+    'Debian', 'Raspbian', 'Ubuntu': {
       class { "${title}::debian":
         ensure       => $ensure,
         enable       => $enable,
